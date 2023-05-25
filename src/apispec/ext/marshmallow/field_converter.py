@@ -442,7 +442,7 @@ class FieldConverterMixin:
                 if "type" in ret:
                     type = ret.pop("type")
                     if isinstance(type, list):
-                        types = list(map(lambda t: {"type": t}, type))
+                        types = [{"type": t} for t in type]
                     else:
                         types = [{"type": type}]
                     types.append(schema_dict)
